@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="{{ RCP_TITLE }}" uid="{{ RCP_PACKAGE }}.application" id="{{ RCP_TITLE }}.product" application="{{ RCP_TITLE }}.application" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="true">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-consoleLog -console -noExit</programArgs>
+      <vmArgs>-Xms40m -Xmx384m</vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <plugins>
+      <plugin id="com.ibm.icu"/>
+      <plugin id="javax.servlet"/>
+      <plugin id="org.eclipse.core.commands"/>
+      <plugin id="org.eclipse.core.contenttype"/>
+      <plugin id="org.eclipse.core.databinding"/>
+      <plugin id="org.eclipse.core.databinding.observable"/>
+      <plugin id="org.eclipse.core.databinding.property"/>
+      <plugin id="org.eclipse.core.expressions"/>
+      <plugin id="org.eclipse.core.jobs"/>
+      <plugin id="org.eclipse.core.runtime"/>
+      <plugin id="org.eclipse.core.runtime.compatibility.auth"/>
+      <plugin id="org.eclipse.core.runtime.compatibility.registry" fragment="true"/>
+      <plugin id="org.eclipse.equinox.app"/>
+      <plugin id="org.eclipse.equinox.common"/>
+      <plugin id="org.eclipse.equinox.preferences"/>
+      <plugin id="org.eclipse.equinox.registry"/>
+      <plugin id="org.eclipse.help"/>
+      <plugin id="org.eclipse.jface"/>
+      <plugin id="org.eclipse.jface.databinding"/>
+      <plugin id="org.eclipse.osgi"/>
+      <plugin id="org.eclipse.osgi.services"/>
+      <plugin id="org.eclipse.swt"/>
+      <plugin id="org.eclipse.swt.cocoa.macosx" fragment="true" ws="cocoa" os="macosx" arch="x86"/>
+      <plugin id="org.eclipse.swt.cocoa.macosx.x86_64" fragment="true" ws="cocoa" os="macosx" arch="x86_64"/>
+      <plugin id="org.eclipse.swt.gtk.linux.x86" fragment="true" ws="gtk" os="linux" arch="x86"/>
+      <plugin id="org.eclipse.swt.gtk.linux.x86_64" fragment="true" ws="gtk" os="linux" arch="x86_64"/>
+      <plugin id="org.eclipse.swt.motif.linux.x86" fragment="true" ws="motif" os="linux" arch="x86"/>
+      <plugin id="org.eclipse.swt.win32.win32.x86" fragment="true" ws="win32" os="win32" arch="x86"/>
+      <plugin id="org.eclipse.swt.win32.win32.x86_64" fragment="true" ws="win32" os="win32" arch="x86_64"/>
+      <plugin id="org.eclipse.ui"/>
+      <plugin id="org.eclipse.ui.workbench"/>
+      <plugin id="{{ RCP_TITLE }}"/>
+   </plugins>
+
+   <configurations>
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.osgi" autoStart="true" startLevel="-1" />
+   </configurations>
+
+</product>
