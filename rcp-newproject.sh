@@ -1,4 +1,6 @@
 #!/bin/bash
+TYCHO_VERSION=0.14.1
+
 usage(){
   echo "Usage: $0 target package title"
 	exit 1
@@ -60,7 +62,7 @@ files="parent/pom.xml"
 
 for file in $files; do
   echo "Processing $file"
-  sed "s/{{ RCP_PACKAGE }}/$2/g" < $file | sed "s/{{ RCP_TITLE }}/$3/g" > $file.tmp
+  sed "s/{{ RCP_PACKAGE }}/$2/g" < $file | sed "s/{{ RCP_TITLE }}/$3/g" | sed "s/{{ TYCHO_VERSION }}/$TYCHO_VERSION/g" > $file.tmp
   mv $file.tmp $1/$2.parent/${file:7}
 done
 
